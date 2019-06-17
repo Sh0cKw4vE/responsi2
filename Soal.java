@@ -55,13 +55,9 @@ public class Soal {
             System.out.print("Inputkan tipe soal \t\t\t= ");
         tipe=input.nextInt();
             if (tipe>5 || tipe <=0) {
-                System.out.println("Salah Input");
+                System.out.println("SALAH INPUT");
             }
-        if(tipe<4){
-            System.out.print("Inputkan tingkat kesulitan (1-3)\t= ");
-            diff=input.nextInt();
-        }
-        if(tipe!=5){
+            if(tipe!=5){
         System.out.print("Inputkan Jumlah soal \t\t\t= ");
         jmlsoal=input.nextInt();
         } else{
@@ -75,6 +71,12 @@ public class Soal {
                     System.out.println("4. Jawaban yang benar akan mendapat nilai +10, jika salah maka +0");
                     
         }
+        } while(tipe>4 || tipe <=0);
+        if(tipe<4){
+            System.out.print("Inputkan tingkat kesulitan (1-3)\t= ");
+            diff=input.nextInt();
+        }
+        
         int ans[]=new int[jmlsoal];
         int b[][]= new int[jmlsoal][8];
         for ( n = 0; n < jmlsoal; n++) {
@@ -86,7 +88,7 @@ public class Soal {
                     switch(diff){
                     case 1:
                         b[n][0]=(int)(Math.random() * (5-0)+1) +0;
-                        c[0]=(int)(Math.random() * (5-0)+1) +0;
+                        c[0]=(int)(Math.random() * (5-1)+1) +1;
                         for (int i = 1; i < 8; i++) {
                             b[n][i]=b[n][(i-1)]+c[0];
                         }
@@ -274,9 +276,12 @@ public class Soal {
                         break;
                         case 3:
                             for (int i = 0; i < 2; i++) {
+                                do{
                             e= (int)(Math.random() * ((10 - 0) + 1)) + 0;
-                            f= (int)(Math.random() * ((10 - 0) + 1)) + 0;
+                            f= (int)(Math.random() * ((10 - 2) + 1)) + 2;
+                            
                             g=(e+f)/2;
+                                }while((e+f)%2!=0);
                             System.out.println(e+" __ "+f);
                             System.out.println("  \\/");
                             if(i!=1){
@@ -297,7 +302,7 @@ public class Soal {
                     }
                 break;
                 case 4:
-                    tipesoal=(int)(Math.random() * ((11 - 0) + 1)) + 0;
+                    tipesoal=(int)(Math.random() * (11 - (-1)) + 1) - 1;
                     switch(tipesoal){
                         case 0:
                             b[n][0]=(int)(Math.random() * (5-0)+1) +0;
@@ -594,7 +599,7 @@ public class Soal {
                 break;
             }
         }
-        } while(tipe>4 || tipe <=0);
+        
         System.out.println("-----------------------------");
         prsn=score;
         System.out.println("Skor anda adalah "+ score);
