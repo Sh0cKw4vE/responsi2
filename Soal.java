@@ -58,8 +58,13 @@ public class Soal {
                 System.out.println("SALAH INPUT");
             }
             if(tipe!=5){
-        System.out.print("Inputkan Jumlah soal \t\t\t= ");
-        jmlsoal=input.nextInt();
+                do{
+                    System.out.print("Inputkan Jumlah soal \t\t\t= ");
+                    jmlsoal=input.nextInt();
+                    if(jmlsoal==0){
+                        System.out.println("Salah Input");
+                    }
+                }while(jmlsoal==0);
         } else{
             System.out.println("--------------");
             System.out.println("HOW TO PLAY :");
@@ -73,8 +78,14 @@ public class Soal {
         }
         } while(tipe>4 || tipe <=0);
         if(tipe<4){
-            System.out.print("Inputkan tingkat kesulitan (1-3)\t= ");
-            diff=input.nextInt();
+            
+            do{
+                System.out.print("Inputkan tingkat kesulitan (1-3)\t= ");
+                diff=input.nextInt();
+            if(diff>3 || diff<1){
+                System.out.println("Salah Input");
+            }
+            }while(diff>3 || diff<1);
         }
         
         int ans[]=new int[jmlsoal];
@@ -599,7 +610,6 @@ public class Soal {
                 break;
             }
         }
-        
         System.out.println("-----------------------------");
         prsn=score;
         System.out.println("Skor anda adalah "+ score);
