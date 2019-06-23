@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package projectta;
 
 import java.util.Scanner;
 
-/**
- *
- * @author Rama
- */
 public class Soal {
     
     public static int Faktorial(int x){
@@ -616,4 +607,3 @@ public class Soal {
         System.out.println("Persentase nilai ="+((prsn/(jmlsoal*10))*100)+"%");
     }
 }
-
